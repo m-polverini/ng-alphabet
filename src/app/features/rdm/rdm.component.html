@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div class="container-fluid mt-2">
+  <div class="row g-3">
+    <div
+      class="col-3 col-md-1 d-flex align-items-center justify-content-center"
+      *ngFor="let letter of alphabet; index as i"
+    >
+      <span
+        class="letter"
+        [ngClass]="{
+          'bg-secondary': !letter.active,
+          'bg-success text-light': letter.selected,
+          'bg-maybe': letter.maybe,
+          pointer: !searching && !letter.selected
+        }"
+        (click)="!searching && !letter.selected ? disableLetter(letter) : null"
+        >{{ letter.char }}</span
+      >
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12 d-flex align-items-center justify-content-center">
+      <button
+        class="btn btn-success btn-lg"
+        (click)="search()"
+        [disabled]="searching"
+      >
+        Find the letter
+      </button>
+      <button class="btn btn-link text-decoration-none ms-3" (click)="reset()">
+        Reset
+      </button>
+    </div>
+  </div>
+  <div class="row mt-5" *ngIf="choicedLetter">
+    <div class="col-12 d-flex align-items-center justify-content-center">
+      <span class="choiced-letter">{{ choicedLetter.char }}</span>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12 d-flex align-items-center justify-content-center">
+      <input type="number" name="seconds" id="seconds" [(ngModel)]="seconds" />
+      {{ seconds }}
+    </div>
+  </div>
+</div>

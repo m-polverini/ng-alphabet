@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/functions";
+
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/helpers";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/navbar";
+
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+html, body {
+  height: 100%;
+  margin:0;
+  padding: 0;
+}
+
+.letter {
+  width: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 25px;
+  background-color: $blue-200;
+}
+
+.bg-maybe {
+  background-color: $yellow-300;
+}
+
+.choiced-letter {
+  width: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 32px;
+  background-color: $success;
+  color: $light;
+}
+
+.pointer {
+  cursor: pointer;
+}
